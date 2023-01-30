@@ -1,8 +1,135 @@
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
+@import "../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss";
 
-// Optional Theme Stylesheet
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+@import "./base/fonts";
+@import "./base/vars";
+@import "./base/mixins";
 
-.container{
+
+
+.container {
     max-width: 1920px;
+}
+
+.design {
+    background-image: url('../images/1873\ 1.jpg');
+    background-size: cover;
+}
+
+.motion {
+    background-image: url('../images/3969\ 1.jpg');
+}
+
+.engine {
+    background-image: url('../images/1876.jpg');
+}
+
+.slide {
+    width: 100%;
+    padding: 347px 0 347px 88px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__preTitle {
+        @include text( $roboto, $primary,$font_bold, 28px, 114% );
+        margin-left: 12px;
+    }
+    &__title{
+        @include text( $viga, $primary,$font_regular, 120px, 107% );
+    }
+    &__description{
+        width: 515px;
+        @include text( $roboto, $primary, $font_regular, 20px, 150% );
+        margin: 65px 0 0 12px;
+    }
+    &__link-block{
+        color: $primary;
+        margin:39px 0 0 12px;
+    }
+    &__link-block > svg{
+        width: 10px;
+        height: 10px;
+        vertical-align: text-top;
+    }
+    &__link{
+        @include text( $roboto, $primary, $font_regular, 24px, 125% );
+        margin: 0 0 0 8px;
+    }
+    &__link_underline{
+        width: 116px;
+        border: 1px solid $primary;
+        margin-left: 20px;
+    }
+
+}
+
+.glide{
+    &__arrow{
+        top: unset;
+        border: none;
+        outline: none;
+        bottom: 75px;
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 100%;
+    }
+    .slide {
+        width: 100%;
+        padding: calc(347px/2) calc(88px/2);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+        &__preTitle {
+            @include text( $roboto, $primary,$font_bold, calc(28px/2), 114% );
+            margin-left:calc(12px/2);
+        }
+        &__title{
+            @include text( $viga, $primary,$font_regular, calc(120px/2), 107% );
+        }
+        &__description{
+            width: calc(515px/2);
+            @include text( $roboto, $primary, $font_regular, calc(20px/2), 150% );
+            margin: calc(65px/2) 0 0 calc(12px/2);
+        }
+        &__link-block{
+            color: $primary;
+            margin:calc(39px/2) 0 0 calc(12px/2);
+        }
+        &__link-block > svg{
+            width: calc(10px/2);
+            height: calc(10px/2);
+            vertical-align: baseline;
+        }
+        &__link{
+            @include text( $roboto, $primary, $font_regular, calc(24px/2), 125% );
+            margin: 0 0 0 calc(8px/2);
+        }
+        &__link_underline{
+            width: calc(116px/2);
+            border: 1px solid $primary;
+            margin-left: 12px;
+        }
+    
+    }
+    
+    .glide{
+        &__arrow{
+            top: unset;
+            border: none;
+            outline: none;
+            bottom: 75px;
+            font-size: calc(42px/2);
+        }
+    }
 }
